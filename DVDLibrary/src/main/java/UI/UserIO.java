@@ -15,6 +15,7 @@ package UI;
 public interface UserIO {
     
     void print(String msg);
+    int[] readDate(String msgPrompt);
 
     double readDouble(String prompt);
 
@@ -34,5 +35,4 @@ public interface UserIO {
 
     String readString(String prompt);
     
-    int[] readDate(String prompt);
 }

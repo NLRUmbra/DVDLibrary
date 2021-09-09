@@ -18,6 +18,15 @@ public class DVD {
     private String directorName;
     private String Studio;
     private String userRating;
+    private int[] date;
+
+    public int[] getDate() {
+        return date;
+    }
+
+    public void setDate(int[] date) {
+        this.date = date;
+    }
 
     public DVD(String title, int month, int day, int year, String MPAARating, String directorName, String Studio, String userRating) {
         this.title = title;

@@ -13,12 +13,10 @@ import java.util.List;
  * @author Noah McElroy
  */
 public class DVDLibraryView {
-    private UserIO io;
-
+    private UserIO io = new UserIOConsoleImpl();
     public DVDLibraryView(UserIO io){
         this.io = io;
     }
-    
     public int printMenuAndGetSelection() {
         io.print("Main Menu");
         io.print("1. Add a DVD to the collection");
@@ -71,7 +69,7 @@ public class DVDLibraryView {
         readEnter();
     }
     
-    public DVD editDVD(String title) {
+     public DVD editDVD(String title) {
         int[] newDate = io.readDate("Please enter new date");
         String newMPAARating = io.readString("Please enter new MPAA rating");
         String newDirectorName = io.readString("Please enter new director's name");
@@ -89,35 +87,23 @@ public class DVDLibraryView {
         io.print("\tUser Rating: "+ dvd.getUserRating());
         io.print("");
     }
-    
     private void readEnter(){
         io.readString("Please hit enter to continue.");
     }
-    
-    public void displayCreateDVDBanner() {
-        io.print("=== Create DVD ==="); 
-    }
-    
-    public void displayEditBanner() {
-        io.print("=== Edit A DVD ==="); 
-    }
-
-    public void displaySuccessBanner(){
-        io.readString("DVD successfully created.");
-    }
-    
     public void displayExitBanner() {
         io.print("Good Bye!!!");
     }
 
-   public void displayUnknownCommandBanner() {
+    public void displayUnknownCommandBanner() {
         io.print("Unknown Command!!!");
     }
     public void displayErrorMessage(String errorMsg) {
         io.print("=== ERROR ===");
         io.print(errorMsg);
     }
-     
+     public void displayCreateDVDBanner() {
+        io.print("=== Add new DVD ===");
+    }
     public void displayCreateSuccessBanner() {
         io.readString("DVD successfully created.  Please hit enter to continue");
     }
@@ -127,4 +113,5 @@ public class DVDLibraryView {
     public void displayDisplayAllBanner() {
         io.print("=== Display All DVDs ===");
     }
+
 }

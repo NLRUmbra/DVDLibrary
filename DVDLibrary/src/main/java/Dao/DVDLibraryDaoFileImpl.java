@@ -7,6 +7,7 @@ package Dao;
 
 import DTO.DVD;
 import UI.UserIO;
+import UI.UserIOConsoleImpl;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -18,13 +19,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 
 /**
  *
  * @author Noah McElroy
  */
 public class DVDLibraryDaoFileImpl implements DVDLibraryDao {
-    private UserIO io;
+    private UserIO io = new UserIOConsoleImpl();
     Map<String, DVD> dvds = new HashMap<>();
     public static final String DVDCollection_FILE = "DVDCollection.txt";
     public static final String DELIMITER = "::";
@@ -59,7 +61,12 @@ public class DVDLibraryDaoFileImpl implements DVDLibraryDao {
         int choice =io.readInt("Please select from the above choices.", 1, 6);
         switch(choice){
             case 1:
-               EditedDVD.setTitle(io.readString("Enter the edited title"));
+               //EditedDVD.setTitle(io.readString("Enter the edited title"));
+               //dvds.remove(title);
+               String newTitle =io.readString("Enter the edited title");
+               DVD DVDFromFile = new DVD(newTitle,EditedDVD.getMonth(),EditedDVD.getDay(),EditedDVD.getYear(),EditedDVD.getMPAARating(),EditedDVD.getDirectorName(), EditedDVD.getStudio(), EditedDVD.getUserRating());
+               dvds.remove(title);
+               dvds.put(newTitle, DVDFromFile);
                break;
             case 2:
                 int month = io.readInt("Please enter the month",1,12);

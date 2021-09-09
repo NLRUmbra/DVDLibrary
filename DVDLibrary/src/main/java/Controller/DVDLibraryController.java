@@ -5,6 +5,10 @@
  */
 package Controller;
 
+/**
+ *
+ * @author Noah McElroy
+ */
 import Dao.DVDLibraryDao;
 import Dao.DVDLibraryDaoException;
 import DTO.DVD;
@@ -88,7 +92,8 @@ public class DVDLibraryController {
     }
 
     private void editDVD() throws DVDLibraryDaoException {
-        
+        String title = view.getDVDChoice();
+        DVD EditedDVD = dao.EditDVD(title);
     }
         
     private void listDVDs() throws DVDLibraryDaoException {

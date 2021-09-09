@@ -1,7 +1,6 @@
 package UI;
 
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -14,6 +13,8 @@ import java.util.regex.Matcher;
  * @author pierre
  */
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class UserIOConsoleImpl implements UserIO {
 
@@ -215,12 +216,11 @@ public class UserIOConsoleImpl implements UserIO {
         } while (result < min || result > max);
         return result;
     }
-
-    // Method that parse in the date in mm-dd-yyyy format
+    
     @Override
     public int[] readDate(String msgPrompt) {
         // Parsing date information using regular expression
-        Pattern pattern = Pattern.compile("\\b(\\d{1,2})-(\\d{1,2})-(\\d{1,4})\\b");
+        Pattern pattern = Pattern.compile("\\b*(\\d{1,2})-(\\d{1,2})-(\\d{1,4})\\b");
         Matcher matcher;
         while (true) {
             matcher = pattern.matcher(this.readString(msgPrompt + " (mm-dd-yyyy)"));
@@ -237,5 +237,6 @@ public class UserIOConsoleImpl implements UserIO {
                 this.print("This is not a valid format for date. Please try again.");
             }
         }
-    }
+
+}
 }
