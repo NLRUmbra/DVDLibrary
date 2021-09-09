@@ -5,10 +5,20 @@
  */
 package App;
 
+import Controller.DVDLibraryController;
+import Dao.DVDLibraryDao;
+import UI.DVDLibraryView;
+import UI.UserIO;
+import UI.UserIOConsoleImpl;
+
 /**
  *
  * @author Noah McElroy
  */
 public class App {
-    
+    UserIO myIo = new UserIOConsoleImpl();
+    DVDLibraryView myView = new DVDLibraryView(myIo);
+    DVDLibraryDao myDao = new DVDLibraryDaoFileImpl();
+    DVDLibraryController controller = new DVDLibraryController(myView, myDao);
+    controller.run();
 }
