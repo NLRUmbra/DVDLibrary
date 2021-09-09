@@ -13,8 +13,12 @@ import java.util.List;
  * @author Noah McElroy
  */
 public class DVDLibraryView {
-    private UserIO io = new UserIOConsoleImpl();
+    private UserIO io;
 
+    public DVDLibraryView(UserIO io){
+        this.io = io;
+    }
+    
     public int printMenuAndGetSelection() {
         // io.print("Main Menu");
         // io.print("1. List Students");
