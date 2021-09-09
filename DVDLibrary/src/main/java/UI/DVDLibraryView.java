@@ -5,10 +5,74 @@
  */
 package UI;
 
+import DTO.DVD;
+import java.util.List;
+
 /**
  *
  * @author Noah McElroy
  */
 public class DVDLibraryView {
+    private UserIO io = new UserIOConsoleImpl();
+
+    public int printMenuAndGetSelection() {
+        // io.print("Main Menu");
+        // io.print("1. List Students");
+        // io.print("2. Create New Student");
+        // io.print("3. View a Student");
+        // io.print("4. Remove a Student");
+        // io.print("5. Exit");
+
+        return io.readInt("Please select from the above choices.", 1, 5);
+    }
     
+    public DVD getNewDVDInfo() {
+        String title = io.readString("Please enter DVD title");
+        int[] releaseDate = io.readDate("Please enter DVD release date");
+        String MPAARating = io.readString("Please enter MPAA rating");
+        String directorName = io.readString("Please enter director's name");
+        String studioName = io.readString("Please enter studio");
+        String userRating = io.readString("Please enter user rating");
+
+        return new DVD(title, releaseDate[0], releaseDate[1], releaseDate[2], MPAARating, directorName, studioName, userRating);
+    }
+    
+    public void displayRemoveResult(DVD dvdRecord) {
+        if(dvdRecord != null){
+            io.print("DVD successfully removed.");
+        } else {
+            io.print("No such DVD.");
+        }
+        io.readString("Please hit enter to continue.");
+    }
+    
+    public void displayDVDList(List<DVD> dvdList) {
+        for (DVD currentDVD : dvdList) {
+            printDVDEntry(currentDVD);
+        }
+        io.readString("Please hit enter to continue.");
+    }
+    
+    public String getDVDChoice() {
+        return io.readString("Please enter the DVD title");
+    }
+
+    public void displayDVD(DVD dvd) {
+        if (dvd != null) {
+            printDVDEntry(dvd);
+        } else {
+            io.print("No such DVD.");
+        }
+        io.readString("Please hit enter to continue.");
+    }
+    
+    private void printDVDEntry(DVD dvd) {
+        io.print(dvd.getTitle());
+        io.print("\tRelease Date: " + String.format("%02d", dvd.getMonth()) + "-" + String.format("%02d", dvd.getDay()) + "-" + dvd.getYear());
+        io.print("\tMPAA Rating: " + dvd.getMPAARating());
+        io.print("\tDirector: " + dvd.getDirectorName());
+        io.print("\tStudio: " + dvd.getStudio());
+        io.print("\tUser Rating: "+ dvd.getUserRating());
+        io.print("");
+    }
 }

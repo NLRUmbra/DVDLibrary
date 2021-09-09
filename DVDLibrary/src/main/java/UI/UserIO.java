@@ -34,4 +34,5 @@ public interface UserIO {
 
     String readString(String prompt);
     
+    int[] readDate(String prompt);
 }
