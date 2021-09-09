@@ -19,6 +19,6 @@ public class App {
     UserIO myIo = new UserIOConsoleImpl();
     DVDLibraryView myView = new DVDLibraryView(myIo);
     DVDLibraryDao myDao = new DVDLibraryDaoFileImpl();
-    DVDLibraryController controller = new DVDLibraryController(myView, myDao);
+    DVDLibraryController controller = new DVDLibraryController(myDao, myView);
     controller.run();
 }
