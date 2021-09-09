@@ -93,6 +93,19 @@ public class DVDLibraryView {
     private void readEnter(){
         io.readString("Please hit enter to continue.");
     }
+    
+    public void displayCreateDVDBanner() {
+        io.print("=== Create DVD ==="); 
+    }
+    
+    public void displayEditBanner() {
+        io.print("=== Edit A DVD ==="); 
+    }
+
+    public void displaySuccessBanner(){
+        io.readString("DVD successfully created.");
+    }
+    
     public void displayExitBanner() {
         io.print("Good Bye!!!");
     }
@@ -104,9 +117,7 @@ public class DVDLibraryView {
         io.print("=== ERROR ===");
         io.print(errorMsg);
     }
-     public void displayCreateDVDBanner() {
-        io.print("=== Add new DVD ===");
-    }
+     
     public void displayCreateSuccessBanner() {
         io.readString("DVD successfully created.  Please hit enter to continue");
     }
