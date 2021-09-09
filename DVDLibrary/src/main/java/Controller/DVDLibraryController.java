@@ -77,7 +77,7 @@ public class DVDLibraryController {
         view.displayCreateDVDBanner();
         DVD newDVD = view.getNewDVDInfo();
         dao.AddDVD(newDVD.getTitle(), newDVD);
-        view.displaySuccessBanner();
+        view.displayCreateSuccessBanner();
     }
     
     private void removeDVD() throws DVDLibraryDaoException {
