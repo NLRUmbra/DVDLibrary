@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.sg.dvdlibrary.controller;
+package controller;
 
-import com.sg.dvdlibrary.dao.DVDLibraryDao;
-import com.sg.dvdlibrary.dao.DVDLibraryDaoException;
-import com.sg.dvdlibrary.dto.DVD;
-import com.sg.dvdlibrary.ui.DVDLibraryView;
-import com.sg.dvdlibrary.ui.UserIO;
-import com.sg.dvdlibrary.ui.UserIOConsoleImpl;
+import Dao.DVDLibraryDao;
+import Dao.DVDLibraryDaoException;
+import DTO.DVD;
+import UI.DVDLibraryView;
+import UI.UserIO;
+import UI.UserIOConsoleImpl;
 import java.util.List;
 
 /**

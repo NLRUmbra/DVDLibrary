@@ -43,14 +43,14 @@ public class DVDLibraryView {
         } else {
             io.print("No such DVD.");
         }
-        io.readString("Please hit enter to continue.");
+        readEnter();
     }
     
     public void displayDVDList(List<DVD> dvdList) {
         for (DVD currentDVD : dvdList) {
             printDVDEntry(currentDVD);
         }
-        io.readString("Please hit enter to continue.");
+        readEnter();
     }
     
     public String getDVDChoice() {
@@ -63,7 +63,7 @@ public class DVDLibraryView {
         } else {
             io.print("No such DVD.");
         }
-        io.readString("Please hit enter to continue.");
+        readEnter();
     }
     
     private void printDVDEntry(DVD dvd) {
@@ -74,5 +74,9 @@ public class DVDLibraryView {
         io.print("\tStudio: " + dvd.getStudio());
         io.print("\tUser Rating: "+ dvd.getUserRating());
         io.print("");
+    }
+    
+    private void readEnter(){
+        io.readString("Please hit enter to continue.");
     }
 }

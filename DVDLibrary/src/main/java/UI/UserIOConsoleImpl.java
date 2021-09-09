@@ -220,7 +220,7 @@ public class UserIOConsoleImpl implements UserIO {
     @Override
     public int[] readDate(String msgPrompt) {
         // Parsing date information using regular expression
-        Pattern pattern = Pattern.compile("\s*\\(d{1,2})-\\(d{1,2})-\\(d{1,4})\s*");
+        Pattern pattern = Pattern.compile("\\b*(\\d{1,2})-(\\d{1,2})-(\\d{1,4})\\b");
         Matcher matcher;
         while (true) {
             matcher = pattern.matcher(this.readString(msgPrompt + " (mm-dd-yyyy)"));
