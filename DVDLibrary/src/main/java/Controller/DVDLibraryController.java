@@ -90,6 +90,10 @@ public class DVDLibraryController {
     private void editDVD() throws DVDLibraryDaoException {
         String title = view.getDVDChoice();
         DVD currentDVD = dao.RemoveDVD(title);
+        if (currentDVD == null){
+            view.displayDVDNotFoundErrorMessage();
+            return;
+        }
         int choice = view.printEditDVDMenuAndSelection();
         switch (choice){
             case 1:

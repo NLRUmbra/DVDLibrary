@@ -107,6 +107,11 @@ public class DVDLibraryView {
         return io.readString("Please enter new user rating");
     }
     
+    public void displayDVDNotFoundErrorMessage(){
+        io.print("This DVD does not exist.");
+        io.print("");
+    }
+    
     private void printDVDEntry(DVD dvd) {
         io.print(dvd.getTitle());
         io.print("\tRelease Date: " + String.format("%02d", dvd.getMonth()) + "-" + String.format("%02d", dvd.getDay()) + "-" + dvd.getYear());
