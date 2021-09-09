@@ -69,14 +69,6 @@ public class DVDLibraryView {
         readEnter();
     }
     
-     public DVD editDVD(String title) {
-        int[] newDate = io.readDate("Please enter new date");
-        String newMPAARating = io.readString("Please enter new MPAA rating");
-        String newDirectorName = io.readString("Please enter new director's name");
-        String newStudio = io.readString("Please enter new studio's name");
-        String newUserRating = io.readString("Please enter new user rating");
-        return new DVD(title, newDate[0], newDate[1], newDate[2], newMPAARating, newDirectorName, newStudio, newUserRating);
-    }
     
     private void printDVDEntry(DVD dvd) {
         io.print(dvd.getTitle());
