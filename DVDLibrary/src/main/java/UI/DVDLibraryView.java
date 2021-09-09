@@ -93,10 +93,6 @@ public class DVDLibraryView {
     private void readEnter(){
         io.readString("Please hit enter to continue.");
     }
-
-    public void displayCreateDVDBanner() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     public void displayExitBanner() {
         io.print("Good Bye!!!");
     }
