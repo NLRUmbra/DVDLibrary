@@ -66,6 +66,15 @@ public class DVDLibraryView {
         readEnter();
     }
     
+    public DVD editDVD(String title) {
+        int[] newDate = io.readDate("Please enter new date");
+        String newMPAARating = io.readString("Please enter new MPAA rating");
+        String newDirectorName = io.readString("Please enter new director's name");
+        String newStudio = io.readString("Please enter new studio's name");
+        String newUserRating = io.readString("Please enter new user rating");
+        return new DVD(title, newDate[0], newDate[1], newDate[2], newMPAARating, newDirectorName, newStudio, newUserRating);
+    }
+    
     private void printDVDEntry(DVD dvd) {
         io.print(dvd.getTitle());
         io.print("\tRelease Date: " + String.format("%02d", dvd.getMonth()) + "-" + String.format("%02d", dvd.getDay()) + "-" + dvd.getYear());
@@ -78,5 +87,9 @@ public class DVDLibraryView {
     
     private void readEnter(){
         io.readString("Please hit enter to continue.");
+    }
+
+    public void displayCreateDVDBanner() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
