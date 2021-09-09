@@ -113,4 +113,7 @@ public class DVDLibraryView {
     public void displayRemoveDVDBanner () {
         io.print("=== Remove a DVD ===");
     }
+    public void displayDisplayAllBanner() {
+        io.print("=== Display All DVDs ===");
+    }
 }
