@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 package Dao;
-
+import DTO.DVD;
+import java.util.List;
 /**
  *
  * @author Noah McElroy
