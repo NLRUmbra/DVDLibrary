@@ -20,14 +20,15 @@ public class DVDLibraryView {
     }
     
     public int printMenuAndGetSelection() {
-        // io.print("Main Menu");
-        // io.print("1. List Students");
-        // io.print("2. Create New Student");
-        // io.print("3. View a Student");
-        // io.print("4. Remove a Student");
-        // io.print("5. Exit");
+        io.print("Main Menu");
+        io.print("1. Add a DVD to the collection");
+        io.print("2. Remove a DVD from the collection");
+        io.print("3. Edit a DVD in the collection");
+        io.print("4. View all DVDs in the collection");
+        io.print("5. View information about a specific DVD");
+        io.print("6. Exit.");
 
-        return io.readInt("Please select from the above choices.", 1, 5);
+        return io.readInt("Please select from the above choices.", 1, 6);
     }
     
     public DVD getNewDVDInfo() {
