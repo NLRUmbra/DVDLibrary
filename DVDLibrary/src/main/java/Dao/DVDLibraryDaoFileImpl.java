@@ -6,6 +6,7 @@
 package Dao;
 
 import DTO.DVD;
+import UI.UserIO;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -23,6 +24,7 @@ import java.util.Scanner;
  * @author Noah McElroy
  */
 public class DVDLibraryDaoFileImpl implements DVDLibraryDao {
+    private UserIO io;
     Map<String, DVD> dvds = new HashMap<>();
     public static final String DVDCollection_FILE = "DVDCollection.txt";
     public static final String DELIMITER = "::";
