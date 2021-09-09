@@ -97,4 +97,24 @@ public class DVDLibraryView {
     public void displayCreateDVDBanner() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    public void displayExitBanner() {
+        io.print("Good Bye!!!");
+    }
+
+    public void displayUnknownCommandBanner() {
+        io.print("Unknown Command!!!");
+    }
+    public void displayErrorMessage(String errorMsg) {
+        io.print("=== ERROR ===");
+        io.print(errorMsg);
+    }
+     public void displayCreateStudentBanner() {
+        io.print("=== Create Student ===");
+    }
+    public void displayCreateSuccessBanner() {
+        io.readString("Student successfully created.  Please hit enter to continue");
+    }
+    public void displayRemoveStudentBanner () {
+        io.print("=== Remove Student ===");
+    }
 }
