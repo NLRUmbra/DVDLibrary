@@ -88,7 +88,34 @@ public class DVDLibraryController {
     }
 
     private void editDVD() throws DVDLibraryDaoException {
+        String title = view.getDVDChoice();
+        DVD currentDVD = dao.RemoveDVD(title);
+        int choice = view.printEditDVDMenuAndSelection();
+        switch (choice){
+            case 1:
+                currentDVD.setTitle(view.getNewTitle());
+                break;
+            case 2:
+                int[] newDate = view.getNewDate();
+                currentDVD.setMonth(newDate[0]);
+                currentDVD.setDay(newDate[1]);
+                currentDVD.setYear(newDate[2]);
+                break;
+            case 3:
+                currentDVD.setMPAARating(view.getNewMPAARating());
+                break;
+            case 4:
+                currentDVD.setDirectorName(view.getNewDirectorName());
+                break;
+            case 5:
+                currentDVD.setStudio(view.getNewStudio());
+                break;
+            case 6:
+                currentDVD.setUserRating(view.getNewUserRating());
+                break;
+        }
         
+        dao.AddDVD(currentDVD.getTitle(), currentDVD);
     }
         
     private void listDVDs() throws DVDLibraryDaoException {

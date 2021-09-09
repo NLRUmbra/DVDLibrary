@@ -71,13 +71,40 @@ public class DVDLibraryView {
         readEnter();
     }
     
-    public DVD editDVD(String title) {
-        int[] newDate = io.readDate("Please enter new date");
-        String newMPAARating = io.readString("Please enter new MPAA rating");
-        String newDirectorName = io.readString("Please enter new director's name");
-        String newStudio = io.readString("Please enter new studio's name");
-        String newUserRating = io.readString("Please enter new user rating");
-        return new DVD(title, newDate[0], newDate[1], newDate[2], newMPAARating, newDirectorName, newStudio, newUserRating);
+    public int printEditDVDMenuAndSelection() {
+        io.print("What would you like to change");
+        io.print("1. Edit title");
+        io.print("2. Edit date");
+        io.print("3. Edit MPAA Rating");
+        io.print("4. Edit Directors name");
+        io.print("5. Edit Studio");
+        io.print("6: Edit user rating");
+
+        return io.readInt("Please select from the above choices.", 1, 6);
+    }
+    
+    public String getNewTitle() {
+        return io.readString("Please enter new title");
+    }
+    
+    public int[] getNewDate() {
+        return io.readDate("Please enter new date");
+    }
+    
+    public String getNewMPAARating() {
+        return io.readString("Please enter new MPAA rating");
+    }
+    
+    public String getNewDirectorName() {
+        return io.readString("Please enter new director's name");
+    }
+    
+    public String getNewStudio() {
+        return io.readString("Please enter new studio's name");
+    }
+    
+    public String getNewUserRating() {
+        return io.readString("Please enter new user rating");
     }
     
     private void printDVDEntry(DVD dvd) {
