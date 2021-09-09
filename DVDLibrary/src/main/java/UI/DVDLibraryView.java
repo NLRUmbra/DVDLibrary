@@ -108,13 +108,13 @@ public class DVDLibraryView {
         io.print("=== ERROR ===");
         io.print(errorMsg);
     }
-     public void displayCreateStudentBanner() {
+     public void displayCreateDVDBanner() {
         io.print("=== Create Student ===");
     }
     public void displayCreateSuccessBanner() {
         io.readString("Student successfully created.  Please hit enter to continue");
     }
-    public void displayRemoveStudentBanner () {
+    public void displayRemoveDVDBanner () {
         io.print("=== Remove Student ===");
     }
 }
