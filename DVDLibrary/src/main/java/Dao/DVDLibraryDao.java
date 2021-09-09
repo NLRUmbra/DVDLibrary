@@ -9,7 +9,7 @@ package Dao;
  *
  * @author Noah McElroy
  */
-public class DVDLibraryDao {
+public interface DVDLibraryDao {
     DVD AddDVD(String title, DVD dvd) throws DVDLibraryDaoException;
     
     DVD RemoveDVD(String title) throws DVDLibraryDaoException;
