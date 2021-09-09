@@ -45,7 +45,45 @@ public class DVDLibraryDaoFileImpl implements DVDLibraryDao {
 
     @Override
     public DVD EditDVD(String title) throws DVDLibraryDaoException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        loadDVDCollection(); 
+        io.print("What would you like to change");
+        io.print("1. Edit title");
+        io.print("2. Edit date");
+        io.print("3. Edit MPAA Rating");
+        io.print("4. Edit Directors name");
+        io.print("5. Edit Studio");
+        io.print("6: Edit user rating");
+        DVD EditedDVD = dvds.get(title);
+        int choice =io.readInt("Please select from the above choices.", 1, 6);
+        switch(choice){
+            case 1:
+               EditedDVD.setTitle(io.readString("Enter the edited title"));
+               break;
+            case 2:
+                int month = io.readInt("Please enter the month",1,12);
+                int day = io.readInt("Please enter the day",1,31);
+                int year = io.readInt("Please enter the year");
+                EditedDVD.setDay(day);
+                EditedDVD.setMonth(month);
+                EditedDVD.setYear(year);
+                break;
+            case 3:
+                EditedDVD.setMPAARating(io.readString("Please Enter the new MPAA rating"));
+                break;
+            case 4:
+                EditedDVD.setDirectorName(io.readString("Please Enter the new director's name"));
+                break;
+            case 5:
+                EditedDVD.setStudio(io.readString("Please enter the new studio"));
+                break;
+            case 6:
+                EditedDVD.setUserRating(io.readString("Please enter the new user rating"));
+                break;
+            default:
+                break;
+        }
+        writeDVDCollection();
+        return EditedDVD;
     }
 
     @Override
