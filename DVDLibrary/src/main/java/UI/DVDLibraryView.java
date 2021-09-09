@@ -101,7 +101,7 @@ public class DVDLibraryView {
         io.print("Good Bye!!!");
     }
 
-    public void displayUnknownCommandBanner() {
+   public void displayUnknownCommandBanner() {
         io.print("Unknown Command!!!");
     }
     public void displayErrorMessage(String errorMsg) {
@@ -109,12 +109,12 @@ public class DVDLibraryView {
         io.print(errorMsg);
     }
      public void displayCreateDVDBanner() {
-        io.print("=== Create Student ===");
+        io.print("=== Add new DVD ===");
     }
     public void displayCreateSuccessBanner() {
-        io.readString("Student successfully created.  Please hit enter to continue");
+        io.readString("DVD successfully created.  Please hit enter to continue");
     }
     public void displayRemoveDVDBanner () {
-        io.print("=== Remove Student ===");
+        io.print("=== Remove a DVD ===");
     }
 }
