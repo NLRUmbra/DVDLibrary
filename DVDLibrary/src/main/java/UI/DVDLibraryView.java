@@ -106,10 +106,6 @@ public class DVDLibraryView {
         io.print("=== Display All DVDs ===");
     }
     
-    public void displaySuccessBanner(){
-        io.readString("DVD successfully created.");
-    }
-    
     public void displayEditBanner() {
         io.print("=== Edit A DVD ==="); 
     }
