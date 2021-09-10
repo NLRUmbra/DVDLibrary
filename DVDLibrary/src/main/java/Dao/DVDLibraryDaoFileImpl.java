@@ -49,7 +49,10 @@ public class DVDLibraryDaoFileImpl implements DVDLibraryDao {
 
     @Override
     public DVD EditDVD(String title) throws DVDLibraryDaoException {
-        loadDVDCollection(); 
+        loadDVDCollection();
+        while(!dvds.containsKey(title)){
+          title = io.readString("previous title is not in collection please enter the DVD title");
+        }
         io.print("What would you like to change");
         io.print("1. Edit title");
         io.print("2. Edit date");
